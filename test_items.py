@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+import time
 
 
 url = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
@@ -10,3 +11,6 @@ def test_add_to_basket_button(browser):
     list_of_shit = browser.find_elements(By.CLASS_NAME, "btn-add-to-basket")
     # если список пуст (что равносильно false), выдаст исключение
     assert list_of_shit, "'Add to basket' button not found"
+
+    #Вывод текста на кнопке
+    print(list_of_shit[0].text)
